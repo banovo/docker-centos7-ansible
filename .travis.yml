@@ -8,8 +8,8 @@ before_script:
   - image="centos-ansible:latest"
 
 script:
-  - docker build -t . "$image"
-  - docker run -it --rm sendxmpp --help
+  - docker build -t "$image" .
+  - docker run -it --rm "$image" sendxmpp --help
 
 after_script:
   - docker images
